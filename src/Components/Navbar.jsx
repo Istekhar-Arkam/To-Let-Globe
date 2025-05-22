@@ -1,17 +1,15 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import Logo from "../assets/Image/Navbar/Logo.svg";
+
 const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-50 shadow">
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+        <nav className="bg-[#232323] border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
             <Link to="/" className="flex items-center">
-              <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="h-12 mr-3"
-                alt="Logo"
-              />
+              <img src={Logo} className="h-12 mr-3" alt="Logo" />
             </Link>
 
             <div
@@ -35,16 +33,30 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/about"
+                    to="/service"
                     className={({ isActive }) =>
                       `block py-2 pr-4 pl-3 duration-200 ${
-                        isActive ? "text-orange-700" : "text-gray-700"
+                        isActive ? "text-orange-700" : "text-white"
                       }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 ${
                         isActive ? "text-orange-700" : "text-gray-700"
                       }`
                     }
                   >
-                    About
+                    Service
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }) =>
+                      ` block py-2 pr-4 pl-3 duration-200  ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 capitalize ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }`
+                    }
+                  >
+                    blog
                   </NavLink>
                 </li>
                 <li>
@@ -53,26 +65,54 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       `block py-2 pr-4 pl-3 duration-200 ${
                         isActive ? "text-orange-700" : "text-gray-700"
-                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 ${
+                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 capitalize ${
                         isActive ? "text-orange-700" : "text-gray-700"
                       }`
                     }
                   >
-                    Contact
+                    contact
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/github"
+                    to="/about"
                     className={({ isActive }) =>
                       `block py-2 pr-4 pl-3 duration-200 ${
                         isActive ? "text-orange-700" : "text-gray-700"
-                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 ${
+                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 capitalize ${
                         isActive ? "text-orange-700" : "text-gray-700"
                       }`
                     }
                   >
-                    Github
+                    about
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/propertyListing"
+                    className={({ isActive }) =>
+                      `block py-2 pr-4 pl-3 duration-200 ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 capitalize ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }`
+                    }
+                  >
+                    property listing
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/logIn"
+                    className={({ isActive }) =>
+                      `block py-2 pr-4 pl-3 duration-200 ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 capitalize ${
+                        isActive ? "text-orange-700" : "text-gray-700"
+                      }`
+                    }
+                  >
+                    log in
                   </NavLink>
                 </li>
               </ul>
