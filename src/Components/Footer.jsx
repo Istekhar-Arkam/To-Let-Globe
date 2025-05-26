@@ -7,7 +7,7 @@ import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <div className="bg-[#000000] ">
+    <div className="bg-[#000000]">
       <div className="mx-10  sm:flex sm:flex-wrap sm:space-x-10 sm:justify-center xl:space-x-10 lg:space-x-0 lg:justify-start xl:justify-center">
         <div className="flex  justify-center py-6 sm:hidden">
           <img src={Logo} className="h-12 " alt="Logo" />
