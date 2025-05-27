@@ -3,6 +3,7 @@ import BigCard from "../Global Components/BigCard";
 import one from "../assets/Image/Blog/one.svg";
 import two from "../assets/Image/Blog/two.svg";
 import three from "../assets/Image/Blog/three.svg";
+import Pagination from "../Global Components/Pagination";
 
 const blogCard = [
   {
@@ -94,6 +95,7 @@ const Blog = () => {
           />
         ))}
       </div>
+      <center><Pagination/></center>
     </>
   );
 };
