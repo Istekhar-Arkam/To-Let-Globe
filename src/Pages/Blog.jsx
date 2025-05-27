@@ -95,7 +95,9 @@ const Blog = () => {
           />
         ))}
       </div>
-      <center><Pagination/></center>
+      <center>
+        <Pagination />
+      </center>
     </>
   );
 };
