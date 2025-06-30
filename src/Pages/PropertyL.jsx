@@ -11,13 +11,20 @@ import nine from "../assets/Image/Property/nine.jpg";
 import ten from "../assets/Image/Property/ten.jpg";
 import eleven from "../assets/Image/Property/eleven.jpg";
 import twelve from "../assets/Image/Property/twelve.jpg";
-
+import { LiaBedSolid } from "react-icons/lia";
+import { MdOutlineBathroom } from "react-icons/md";
+import { MdSquareFoot } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 const PropertyL = () => {
   const property = [
     {
       image: one,
-      title: "Villa in Mumbai",
+      title: "2 BHK House On Rent",
       rating: 4.5,
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
+      features2: ["RS 20,000"],
+      owner: <CgProfile />,
+      ownerName: "istekhar arkam",
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -28,8 +35,12 @@ const PropertyL = () => {
     },
     {
       image: two,
-      title: "Modern Villa in Delhi",
+      title: "4 BHK Villa in Mumbai",
       rating: 4.5,
+      features2: ["RS 100,000"],
+      owner: <CgProfile />,
+      ownerName: "virat kohli",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -40,8 +51,12 @@ const PropertyL = () => {
     },
     {
       image: three,
-      title: "Modern Villa in Mumbai",
+      title: "5 BHK Luxury Villa",
       rating: 4.5,
+      features2: ["RS 150,000"],
+      owner: <CgProfile />,
+      ownerName: "shahrukh khan",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -52,8 +67,12 @@ const PropertyL = () => {
     },
     {
       image: four,
-      title: "Modern Villa in Mumbai",
+      title: "2 BHK flat in Mumbai On Rent",
       rating: 4.5,
+      features2: ["Rs 125,000"],
+      owner: <CgProfile />,
+      ownerName: "salman khan",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -64,8 +83,12 @@ const PropertyL = () => {
     },
     {
       image: five,
-      title: "Modern Villa in Mumbai",
+      title: "2 Bhk House On Rent",
       rating: 4.5,
+      features2: ["RS 200000"],
+      owner: <CgProfile />,
+      ownerName: "khabib nurmagomedov",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -76,8 +99,12 @@ const PropertyL = () => {
     },
     {
       image: six,
-      title: "Modern Villa in Mumbai",
+      title: "6 BHK Villa in Mumbai",
       rating: 4.5,
+      features2: ["RS 300000"],
+      owner: <CgProfile />,
+      ownerName: "ab de villers",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -88,8 +115,12 @@ const PropertyL = () => {
     },
     {
       image: seven,
-      title: "Villa in Mumbai",
+      title: "4 BHK Villa in Mumbai",
       rating: 4.5,
+      features2: [" RS 600000"],
+      owner: <CgProfile />,
+      ownerName: "dale steyn",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -100,8 +131,12 @@ const PropertyL = () => {
     },
     {
       image: eight,
-      title: "Modern Villa in Delhi",
+      title: "3 BHK House in Mumbai",
       rating: 4.5,
+      features2: ["RS 500000"],
+      owner: <CgProfile />,
+      ownerName: "shoib akhtar",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -112,8 +147,12 @@ const PropertyL = () => {
     },
     {
       image: nine,
-      title: "Modern Villa in Mumbai",
+      title: "4 BHK House in Mumbai",
       rating: 4.5,
+      features2: ["RS 500000"],
+      owner: <CgProfile />,
+      ownerName: "babar azam",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -124,8 +163,12 @@ const PropertyL = () => {
     },
     {
       image: ten,
-      title: "Modern Villa in Mumbai",
+      title: "4 BHK Modern Villa in Mumbai",
       rating: 4.5,
+      features2: ["RS 500000"],
+      owner: <CgProfile />,
+      ownerName: "ms dhoni",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -136,8 +179,12 @@ const PropertyL = () => {
     },
     {
       image: eleven,
-      title: "Modern Villa in Mumbai",
+      title: "3 BHK House in Mumbai",
       rating: 4.5,
+      features2: ["RS 500000"],
+      owner: <CgProfile />,
+      ownerName: "cristiano ronaldo",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
@@ -148,8 +195,12 @@ const PropertyL = () => {
     },
     {
       image: twelve,
-      title: "Modern Villa in Mumbai",
+      title: "5 BHK Luxury Villa in Mumbai",
       rating: 4.5,
+      features2: ["RS 1000000"],
+      owner: <CgProfile />,
+      ownerName: "zalatan ibrahimovic",
+      icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
