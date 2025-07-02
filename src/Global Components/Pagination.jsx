@@ -1,28 +1,105 @@
 import React from "react";
 
-const Pagination = () => {
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+  buttonComponent: Button = "button", // Default to a native button if no custom Button is provided
+  buttonClassName = "px-2 py-1 rounded-lg hover:text-[#6CC1B6]",
+  activeButtonClassName = "px-2 py-1 rounded-lg text-[#6CC1B6] underline",
+}) => {
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      onPageChange(currentPage + 1);
+    }
+  };
+
+  const handlePageClick = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      onPageChange(page);
+    }
+  };
+
   return (
-    <div className="flex items-center justify-center py-6 lg:py-10">
-      <nav className="bg-gray-800 text-white rounded-xl py-2 flex items-center gap-2 lg:px-4">
-        <button
-          className="flex items-center gap-1 px-2 py-1 text-sm text-white hover:text-teal-400 disabled:opacity-50"
-          disabled
+    <div className="flex justify-center my-5 mx-auto">
+      <div className="bg-black rounded-md px-2 py-1 flex justify-center gap-3">
+        {/* Previous Button */}
+        <Button
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+          className={`hover:text-[#6CC1B6] rounded-lg flex items-center ${
+            currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
-          <span>&lt;</span>
-          Previous
-        </button>
-        <button className="px-2 py-1 text-sm text-teal-400 border-b border-teal-400">
-          1
-        </button>
-        <button className="px-2 py-1 text-sm hover:text-teal-400">2</button>
-        <span className="px-2 py-1 text-sm">…</span>
-        <button className="py-1 text-sm hover:text-teal-400">10</button>
-        <div className="w-px h-4 bg-gray-600 mx-1"></div>
-        <button className="flex items-center gap-1 px-2 py-1 text-sm hover:text-teal-400">
-          Next
-          <span>&gt;</span>
-        </button>
-      </nav>
+          <FaChevronLeft className="mr-2" /> Previous
+        </Button>
+
+        {/* Page Numbers */}
+        <div className="flex items-center space-x-2">
+          {currentPage > 2 && (
+            <>
+              <Button
+                onClick={() => handlePageClick(1)}
+                className={buttonClassName}
+              >
+                1
+              </Button>
+              {currentPage > 3 && <span className="px-2">...</span>}
+            </>
+          )}
+          {currentPage > 1 && (
+            <Button
+              onClick={() => handlePageClick(currentPage - 1)}
+              className={buttonClassName}
+            >
+              {currentPage - 1}
+            </Button>
+          )}
+          <Button className={activeButtonClassName} aria-current="page">
+            {currentPage}
+          </Button>
+          {currentPage < totalPages && (
+            <Button
+              onClick={() => handlePageClick(currentPage + 1)}
+              className={buttonClassName}
+            >
+              {currentPage + 1}
+            </Button>
+          )}
+          {currentPage < totalPages - 1 && (
+            <>
+              {currentPage < totalPages - 2 && (
+                <span className="px-2">...</span>
+              )}
+              <Button
+                onClick={() => handlePageClick(totalPages)}
+                className={buttonClassName}
+              >
+                {totalPages}
+              </Button>
+            </>
+          )}
+        </div>
+
+        {/* Next Button */}
+        <Button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          className={`hover:text-[#6CC1B6] rounded-lg flex items-center ${
+            currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+        >
+          Next <FaChevronRight className="ml-2" />
+        </Button>
+      </div>
     </div>
   );
 };

@@ -1,14 +1,8 @@
 import React, { useState } from "react";
+import CompareC from "./CompareC";
 
 const PropertyCard = ({ property }) => {
   const [showModal, setShowModal] = useState(false);
-  const [sections, setSections] = useState(property);
-
-  const handleTabClick = (id) => {
-    const clicked = sections.find((sec) => sec.id === id);
-    const others = sections.filter((sec) => sec.id !== id);
-    setSections([clicked, ...others]);
-  };
 
   return (
     <>
@@ -54,7 +48,7 @@ const PropertyCard = ({ property }) => {
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-60 overflow-y-auto">
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5 ">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-bold text-black">
                   {property.title}
@@ -72,29 +66,34 @@ const PropertyCard = ({ property }) => {
                 className="w-full h-64 object-cover rounded mb-4"
               />
             </div>
-            <div>
-               <div className="rounded-lg p-5 overflow-y-auto m-3 max-w-xl">
-              <p className="">
-                <strong className="text-2xl"></strong>{" "}
-                {property.location}
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-5 overflow-y-auto m-3 max-w-xl">
-              <div className="mb-2 text-black">
-                <strong className="text-xl">Features:</strong>
-                <ul className="my-4 text-gray-700 gap-3 flex flex-wrap">
-                  {property.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="border-2 inline-block p-2 rounded-lg "
-                    >
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+            <div className="flex justify-between rounded-lg p-3 m-3 ">
+              <div className="w-xl">
+                <div className="rounded-lg p-5 overflow-y-auto m-3 max-w-xl">
+                  <p className="">
+                    <strong className="text-2xl"></strong> {property.location}
+                  </p>
+                </div>
+
+                <div className="bg-white rounded-lg p-5 overflow-y-auto m-3 ">
+                  <div className="mb-2 text-black">
+                    <strong className="text-xl">Features:</strong>
+                    <ul className="my-4 text-gray-700 gap-3 flex flex-wrap">
+                      {property.features.map((feature, i) => (
+                        <li
+                          key={i}
+                          className="border-2 inline-block p-2 rounded-lg "
+                        >
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-lg bg-white">
+                <CompareC />
               </div>
             </div>
-</div>
             <div className=" flex justify-between items-center p-4 m-4 rounded-lg text-xl font-semibold text-white mt-10 mb-3">
               <button className="capitalize">Feature</button>
               <button className="capitalize">about</button>
@@ -103,20 +102,20 @@ const PropertyCard = ({ property }) => {
               <button className="capitalize">location</button>
               <button className="capitalize">reviews</button>
             </div>
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5">
               <p className="mb-2 text-black">
                 <strong className="text-xl">Rating:</strong> ⭐{" "}
                 {property.rating}
               </p>
             </div>
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5 ">
               <div className="mb-2 text-black">
                 <strong className="text-xl">Features:</strong>
                 <ul className="my-4 text-gray-700 gap-3 flex flex-wrap">
                   {property.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="border-2 inline-block p-2 rounded-lg "
+                      className="border-2 inline-block p-2 rounded-lg"
                     >
                       {feature}
                     </li>
@@ -124,14 +123,14 @@ const PropertyCard = ({ property }) => {
                 </ul>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5">
               <div className="mb-2 text-black">
                 <strong className="text-xl">Amenities:</strong>
                 <ul className="flex my-4 gap-3  text-gray-700 flex-wrap">
                   {property.amenities.map((amenity, i) => (
                     <li
                       key={i}
-                      className="border-2 inline-block p-2 rounded-lg "
+                      className="border-2 inline-block p-2 rounded-lg"
                     >
                       {amenity}
                     </li>
@@ -140,13 +139,13 @@ const PropertyCard = ({ property }) => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5">
               <p className="text-black">
                 <strong className="text-xl">Location:</strong>{" "}
                 {property.location}
               </p>
             </div>
-            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-5">
               <div className="mb-2 text-black">
                 <strong className="text-xl">Reviews:</strong>
                 <ul className=" text-gray-700 my-4">

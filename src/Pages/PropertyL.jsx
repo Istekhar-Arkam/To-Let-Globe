@@ -15,7 +15,10 @@ import { LiaBedSolid } from "react-icons/lia";
 import { MdOutlineBathroom } from "react-icons/md";
 import { MdSquareFoot } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import Pagination from "../Global Components/Pagination.jsx";
+import { useState } from "react";
 const PropertyL = () => {
+   
   const property = [
     {
       image: one,
@@ -214,12 +217,16 @@ const PropertyL = () => {
       ],
       location: "Andheri West, Mumbai, Maharashtra",
     },
+     
   ];
+ 
   return (
     <div className="min-h-screen bg-gray-100 p-6 flex flex-wrap justify-center items-start gap-6">
       {property.map((property, index) => (
         <PropertyCard key={index} property={property} />
       ))}
+    
+       <Pagination/>
     </div>
   );
 };
