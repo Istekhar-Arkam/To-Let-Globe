@@ -19,13 +19,18 @@ const PropertyL = () => {
   const property = [
     {
       image: one,
-      title: "2 BHK House On Rent",
+      title: "2 BHK flat on Rent",
       rating: 4.5,
       icon: [<LiaBedSolid />, <MdOutlineBathroom />, <MdSquareFoot />],
       features2: ["RS 20,000"],
       owner: <CgProfile />,
       ownerName: "istekhar arkam",
-      features: ["3 BHK", "2 Bathrooms", "2000 sqft"],
+      features: [
+        "3 BHK ",
+        "2 Bathrooms",
+        "2000 sqft",
+        "Appliances - Washing Machine",
+      ],
       amenities: ["Swimming Pool", "Gym", "Parking"],
       reviews: [
         { name: "Amit", text: "Beautiful place, had a great experience!" },

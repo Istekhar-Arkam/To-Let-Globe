@@ -2,16 +2,25 @@ import React, { useState } from "react";
 
 const PropertyCard = ({ property }) => {
   const [showModal, setShowModal] = useState(false);
+  const [sections, setSections] = useState(property);
+
+  const handleTabClick = (id) => {
+    const clicked = sections.find((sec) => sec.id === id);
+    const others = sections.filter((sec) => sec.id !== id);
+    setSections([clicked, ...others]);
+  };
+
   return (
     <>
       <div className="my-5">
-        <div className=" rounded overflow-hidden shadow-lg cursor-pointer sm:w-[430px] sm:h-[450px]">
+        <div className=" rounded-xl overflow-hidden shadow-lg cursor-pointer sm:w-[430px] sm:h-[450px]">
           <img
             className="w-full h-56 object-cover"
             src={property.image}
             alt="House"
           />
-          <div className="px-4 py-4">
+
+          <div className="px-3 py-4">
             <div className="font-bold text-2xl mb-2 text-black">
               {property.title}
             </div>
@@ -45,14 +54,14 @@ const PropertyCard = ({ property }) => {
         {/* Modal */}
         {showModal && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-60 overflow-y-auto">
-            <div className="bg-white w-full rounded-lg p-6 overflow-y-auto m-4">
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-bold text-black">
                   {property.title}
                 </h2>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="text-red-500 text-xl font-bold"
+                  className="text-red-500 text-3xl font-bold"
                 >
                   &times;
                 </button>
@@ -63,48 +72,95 @@ const PropertyCard = ({ property }) => {
                 className="w-full h-64 object-cover rounded mb-4"
               />
             </div>
-            <div className="bg-white w-full rounded-lg p-6 m-4 ">
-              <p className="mb-2">
-                <strong className="text-black">Rating:</strong> ⭐{" "}
-                {property.rating}
+            <div>
+               <div className="rounded-lg p-5 overflow-y-auto m-3 max-w-xl">
+              <p className="">
+                <strong className="text-2xl"></strong>{" "}
+                {property.location}
               </p>
             </div>
-            <div className="bg-white w-full rounded-lg p-6 m-4 ">
-              <div className="mb-2">
-                <strong>Features:</strong>
-                <ul className="list-disc ml-6 text-gray-700">
+            <div className="bg-white rounded-lg p-5 overflow-y-auto m-3 max-w-xl">
+              <div className="mb-2 text-black">
+                <strong className="text-xl">Features:</strong>
+                <ul className="my-4 text-gray-700 gap-3 flex flex-wrap">
                   {property.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="bg-white w-full rounded-lg p-6 m-4 ">
-              <div className="mb-2">
-                <strong>Amenities:</strong>
-                <ul className="list-disc ml-6 text-gray-700">
-                  {property.amenities.map((amenity, i) => (
-                    <li key={i}>{amenity}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="bg-white w-full rounded-lg p-6 m-4 ">
-              <div className="mb-2">
-                <strong>Reviews:</strong>
-                <ul className="ml-6 text-gray-700">
-                  {property.reviews.map((review, i) => (
-                    <li key={i} className="mb-1">
-                      <strong>{review.name}:</strong> "{review.text}"
+                    <li
+                      key={i}
+                      className="border-2 inline-block p-2 rounded-lg "
+                    >
+                      {feature}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-white w-full rounded-lg p-6 m-4 ">
-              <p className="text-black">
-                <strong>Location:</strong> {property.location}
+</div>
+            <div className=" flex justify-between items-center p-4 m-4 rounded-lg text-xl font-semibold text-white mt-10 mb-3">
+              <button className="capitalize">Feature</button>
+              <button className="capitalize">about</button>
+              <button className="capitalize">amenities</button>
+              <button className="capitalize">reguation</button>
+              <button className="capitalize">location</button>
+              <button className="capitalize">reviews</button>
+            </div>
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3">
+              <p className="mb-2 text-black">
+                <strong className="text-xl">Rating:</strong> ⭐{" "}
+                {property.rating}
               </p>
+            </div>
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+              <div className="mb-2 text-black">
+                <strong className="text-xl">Features:</strong>
+                <ul className="my-4 text-gray-700 gap-3 flex flex-wrap">
+                  {property.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="border-2 inline-block p-2 rounded-lg "
+                    >
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+              <div className="mb-2 text-black">
+                <strong className="text-xl">Amenities:</strong>
+                <ul className="flex my-4 gap-3  text-gray-700 flex-wrap">
+                  {property.amenities.map((amenity, i) => (
+                    <li
+                      key={i}
+                      className="border-2 inline-block p-2 rounded-lg "
+                    >
+                      {amenity}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+              <p className="text-black">
+                <strong className="text-xl">Location:</strong>{" "}
+                {property.location}
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-3 overflow-y-auto m-3 ">
+              <div className="mb-2 text-black">
+                <strong className="text-xl">Reviews:</strong>
+                <ul className=" text-gray-700 my-4">
+                  {property.reviews.map((review, i) => (
+                    <li
+                      key={i}
+                      className="text-xl mb-1 border-2 block max-w-4xl p-6 rounded-lg my-5"
+                    >
+                      <strong className="text-black">{review.name}:</strong>{" "}
+                      {review.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         )}

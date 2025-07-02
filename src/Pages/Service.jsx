@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Service = () => {
+function Service() {
   return (
-  <>
-  <h1>service</h1>
-  </>
+    <div>Service</div>
   )
 }
 
